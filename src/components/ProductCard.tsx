@@ -1,7 +1,6 @@
 import { Product } from "@/types";
-import Image from "next/image";
+import ClientImage from "./ClientImage";
 import Link from "next/link";
-import React from "react";
 
 interface Props {
   product: Product;
@@ -17,13 +16,11 @@ const ProductCard = ({ product }: Props) => {
       aria-label={`View details for ${product.title}`}
     >
       <div className="product-card_img-container">
-        <Image
+        <ClientImage
           src={product.image}
           alt={product.title}
           width={200}
           height={200}
-          className="product-card_img"
-          onError={(e) => (e.currentTarget.src = "/fallback-image.jpg")}
         />
       </div>
 
